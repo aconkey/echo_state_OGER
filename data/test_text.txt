@@ -1,3 +1,0 @@
-1 this is a first test sentence
-0 this sentence is a second test sentence
-1 and this third one is a third test sentence
