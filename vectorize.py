@@ -18,8 +18,10 @@ def get_vectorized_data(in_filename):
             target_val = float(words[0])
             del words[0]
             for word in words:
-                sentence.append(model[word])
-                target.append(np.asarray([target_val])) # same target value for each sentence word
+                # only append word if exists in dictionary
+                if (model.__contains__(word)):
+                    sentence.append(model[word])
+                    target.append(np.asarray([target_val])) # same target value for each sentence word
             x.append(np.asarray(sentence)) # one sentence per line
             y.append(np.asarray(target))
     return x,y
